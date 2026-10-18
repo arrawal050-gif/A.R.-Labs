@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Download, Smartphone, ShieldCheck, CheckCircle2, FileCode, Check } from 'lucide-react';
+import { Download, Smartphone, ShieldCheck, CheckCircle2, FileCode } from 'lucide-react';
+import btIcon from '../assets/bluetooth_extender_icon.png';
+import portalIcon from '../assets/portal_icon.png';
 
 export default function AndroidDownloads({ onNotify, onOpenReleaseNotes }) {
   const [downloadingId, setDownloadingId] = useState(null);
@@ -13,7 +15,7 @@ export default function AndroidDownloads({ onNotify, onOpenReleaseNotes }) {
       downloadUrl: './downloads/bluetoothExtender.apk',
       version: 'v1.2.0 (Stable)',
       size: '17.9 MB',
-      icon: './assets/bluetooth_extender_icon.png',
+      icon: btIcon,
       accentClass: 'accent-glow-indigo',
       badgeColor: 'text-indigo-400 border-indigo-500/40 bg-indigo-950/60',
       buttonBg: 'bg-indigo-600 hover:bg-indigo-500',
@@ -35,7 +37,7 @@ export default function AndroidDownloads({ onNotify, onOpenReleaseNotes }) {
       downloadUrl: './downloads/acadmic_portal.apk',
       version: 'v2.0.4 (Release)',
       size: '6.5 MB',
-      icon: './assets/portal_icon.png',
+      icon: portalIcon,
       accentClass: 'accent-glow-violet',
       badgeColor: 'text-violet-400 border-violet-500/40 bg-violet-950/60',
       buttonBg: 'bg-violet-600 hover:bg-violet-500',
@@ -102,9 +104,6 @@ export default function AndroidDownloads({ onNotify, onOpenReleaseNotes }) {
                         src={apk.icon}
                         alt={apk.name}
                         className="w-full h-full object-contain filter drop-shadow"
-                        onError={(e) => {
-                          e.target.style.display = 'none';
-                        }}
                       />
                     </div>
                     <div>

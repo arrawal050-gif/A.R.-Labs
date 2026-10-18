@@ -1,5 +1,7 @@
-import React from 'react';
-import { ExternalLink, Globe, ArrowUpRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { ExternalLink, Globe, ArrowUpRight, User } from 'lucide-react';
+import founderImg from '../assets/founder_anuj.jpg';
+import fallbackImg from '../assets/publications.png';
 
 const LinkedInIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -16,6 +18,8 @@ const InstagramIcon = ({ className }) => (
 );
 
 export default function FounderSection() {
+  const [imgError, setImgError] = useState(false);
+
   const socials = [
     {
       name: 'Interactive Portfolio',
@@ -68,15 +72,23 @@ export default function FounderSection() {
             <div className="lg:col-span-4 flex flex-col items-center sm:items-start">
               <div className="relative group" data-cursor-text="FOUNDER">
                 <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-500/20 via-indigo-500/20 to-pink-500/20 blur-xl opacity-75 group-hover:opacity-100 transition duration-500" />
-                <div className="relative w-52 h-52 sm:w-64 sm:h-64 rounded-2xl overflow-hidden border border-zinc-700 bg-zinc-900 shadow-2xl">
-                  <img
-                    src="./assets/founder_anuj.jpg"
-                    alt="Anuj Rawal — Founder & Systems Engineer"
-                    className="w-full h-full object-cover object-top filter grayscale contrast-125 hover:grayscale-0 transition-all duration-700"
-                    onError={(e) => {
-                      e.target.src = './assets/publications.png';
-                    }}
-                  />
+                <div className="relative w-52 h-52 sm:w-64 sm:h-64 rounded-2xl overflow-hidden border border-zinc-700 bg-zinc-900 shadow-2xl flex items-center justify-center">
+                  {!imgError ? (
+                    <img
+                      src={founderImg}
+                      alt="Anuj Rawal — Founder & Systems Engineer"
+                      className="w-full h-full object-cover object-top filter grayscale contrast-125 hover:grayscale-0 transition-all duration-700"
+                      onError={() => setImgError(true)}
+                    />
+                  ) : (
+                    <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-zinc-800 to-zinc-950 p-6 text-center">
+                      <div className="w-16 h-16 rounded-full bg-zinc-700/80 border border-zinc-600 flex items-center justify-center text-white font-mono font-bold text-2xl mb-3 shadow-inner">
+                        AR
+                      </div>
+                      <span className="text-white font-tech font-bold text-sm tracking-wider uppercase">Anuj Rawal</span>
+                      <span className="text-xs font-mono text-cyan-400 mt-1">A.R. Labs</span>
+                    </div>
+                  )}
                 </div>
               </div>
               <div className="mt-5 text-center sm:text-left">

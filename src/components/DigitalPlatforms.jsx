@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { ExternalLink, Copy, Check, Layers, BookOpen, GraduationCap, ArrowUpRight } from 'lucide-react';
+import aiosLogo from '../assets/aios_logo.png';
+import aiosHero from '../assets/aios_hero.png';
+import publicationsLogo from '../assets/publications.png';
+import helpdeskLogo from '../assets/helpdesk_entrance.jpg';
 
 export default function DigitalPlatforms({ onNotify }) {
   const [copiedId, setCopiedId] = useState(null);
@@ -16,8 +20,8 @@ export default function DigitalPlatforms({ onNotify }) {
       accentClass: 'accent-glow-cyan',
       accentColor: '#06b6d4',
       badgeBg: 'bg-cyan-950/60 text-cyan-400 border-cyan-500/40',
-      logo: './assets/aios_logo.png',
-      banner: './assets/aios_hero.png',
+      logo: aiosLogo,
+      banner: aiosHero,
       icon: Layers,
       status: 'Live Production',
       highlights: ['Multi-Agent Mesh', 'ICRA Toolkits', 'Model Sandbox', 'Vercel Edge Distribution'],
@@ -33,8 +37,8 @@ export default function DigitalPlatforms({ onNotify }) {
       accentClass: 'accent-glow-amber',
       accentColor: '#f59e0b',
       badgeBg: 'bg-amber-950/60 text-amber-400 border-amber-500/40',
-      logo: './assets/publications.png',
-      banner: './assets/publications.png',
+      logo: publicationsLogo,
+      banner: publicationsLogo,
       icon: BookOpen,
       status: 'Live Archive',
       highlights: ['Technical Treatises', 'Sanatan Philosophy', 'Fiction Archives', 'Amazon & Flipkart Distribution'],
@@ -50,8 +54,8 @@ export default function DigitalPlatforms({ onNotify }) {
       accentClass: 'accent-glow-emerald',
       accentColor: '#10b981',
       badgeBg: 'bg-emerald-950/60 text-emerald-400 border-emerald-500/40',
-      logo: './assets/helpdesk_entrance.jpg',
-      banner: './assets/helpdesk_entrance.jpg',
+      logo: helpdeskLogo,
+      banner: helpdeskLogo,
       icon: GraduationCap,
       status: 'Live Utility',
       highlights: ['360° Lab Panoramas', 'Bosch & Mitsubishi Labs', 'Syllabus Navigator', 'Academic Utilities'],
@@ -106,9 +110,6 @@ export default function DigitalPlatforms({ onNotify }) {
                         src={platform.logo}
                         alt={platform.title}
                         className="w-full h-full object-contain filter drop-shadow"
-                        onError={(e) => {
-                          e.target.style.display = 'none';
-                        }}
                       />
                     ) : (
                       <IconComp className="w-6 h-6 text-zinc-300" />
