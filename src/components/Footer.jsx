@@ -93,12 +93,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/downloads/bluetoothExtender.apk" download className="hover:text-white transition-colors">
+                <a href="./downloads/bluetoothExtender.apk" download className="hover:text-white transition-colors">
                   Bluetooth Extender (.APK)
                 </a>
               </li>
               <li>
-                <a href="/downloads/acadmic_portal.apk" download className="hover:text-white transition-colors">
+                <a href="./downloads/acadmic_portal.apk" download className="hover:text-white transition-colors">
                   Academic Portal (.APK)
                 </a>
               </li>

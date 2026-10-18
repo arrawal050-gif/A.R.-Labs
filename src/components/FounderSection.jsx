@@ -70,11 +70,11 @@ export default function FounderSection() {
                 <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-500/20 via-indigo-500/20 to-pink-500/20 blur-xl opacity-75 group-hover:opacity-100 transition duration-500" />
                 <div className="relative w-52 h-52 sm:w-64 sm:h-64 rounded-2xl overflow-hidden border border-zinc-700 bg-zinc-900 shadow-2xl">
                   <img
-                    src="/assets/founder_anuj.jpg"
+                    src="./assets/founder_anuj.jpg"
                     alt="Anuj Rawal — Founder & Systems Engineer"
                     className="w-full h-full object-cover object-top filter grayscale contrast-125 hover:grayscale-0 transition-all duration-700"
                     onError={(e) => {
-                      e.target.src = '/assets/publications.png';
+                      e.target.src = './assets/publications.png';
                     }}
                   />
                 </div>
